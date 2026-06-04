@@ -1,0 +1,357 @@
+/* ── hook chapter — .hk- prefix ── */
+
+.hk-scene {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 92px 130px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* ── step 0: salary hero ── */
+.hk-salary-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.hk-salary-row {
+  display: flex;
+  align-items: baseline;
+  gap: 80px;
+}
+
+.hk-salary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hk-salary-label {
+  font-family: var(--font-body);
+  font-size: 28px;
+  color: var(--text-mute);
+  letter-spacing: 0.04em;
+}
+
+.hk-salary-number {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 96px;
+  color: var(--text);
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.hk-salary-unit {
+  font-family: var(--font-body);
+  font-size: 24px;
+  color: var(--text-mute);
+  margin-left: 4px;
+}
+
+.hk-vs {
+  font-family: var(--font-display-en);
+  font-size: 32px;
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+.hk-multiplier {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 160px;
+  color: var(--accent);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hk-multiplier.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── step 1: question ── */
+.hk-question-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.hk-question {
+  font-family: var(--font-display-cn);
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  line-height: 1.4;
+  max-width: 1200px;
+}
+
+.hk-question em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.hk-answer {
+  font-family: var(--font-body);
+  font-size: 36px;
+  color: var(--text-mute);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+}
+
+.hk-answer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── step 2: dataset stats ── */
+.hk-stats-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.hk-stats-title {
+  font-family: var(--font-display-cn);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+
+.hk-stats-grid {
+  display: flex;
+  gap: 48px;
+}
+
+.hk-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 48px;
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-card, 4px);
+  min-width: 200px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hk-stat-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hk-stat-number {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 72px;
+  color: var(--accent);
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.hk-stat-label {
+  font-family: var(--font-body);
+  font-size: 22px;
+  color: var(--text-mute);
+  text-align: center;
+}
+
+/* ── step 3: activity bar ── */
+.hk-activity-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.hk-activity-title {
+  font-family: var(--font-display-cn);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+
+.hk-activity-bar-wrap {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hk-activity-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: var(--text-mute);
+}
+
+.hk-activity-bar-track {
+  width: 100%;
+  height: 48px;
+  background: var(--surface-3);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hk-activity-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+  width: 0%;
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hk-activity-bar-fill.visible {
+  width: 88%;
+}
+
+.hk-activity-percent {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 80px;
+  color: var(--accent);
+  letter-spacing: -0.035em;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.8s, transform 0.6s ease 0.8s;
+}
+
+.hk-activity-percent.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── steps 4-5: pain points ── */
+.hk-pain-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+}
+
+.hk-pain-title {
+  font-family: var(--font-display-cn);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+
+.hk-pain-cards {
+  display: flex;
+  gap: 36px;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.hk-pain-card {
+  flex: 1;
+  padding: 36px 32px;
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-card, 4px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hk-pain-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hk-pain-card.dimmed {
+  opacity: 0.35;
+}
+
+.hk-pain-icon {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 48px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.hk-pain-text {
+  font-family: var(--font-body);
+  font-size: 24px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+/* ── step 6: transition ── */
+.hk-transition-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.hk-transition-text {
+  font-family: var(--font-display-cn);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  line-height: 1.5;
+  max-width: 1100px;
+}
+
+.hk-transition-sub {
+  font-family: var(--font-body);
+  font-size: 28px;
+  color: var(--text-mute);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
+}
+
+.hk-transition-sub.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── reveal animation base ── */
+.hk-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hk-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
