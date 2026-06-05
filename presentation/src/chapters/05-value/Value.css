@@ -1,0 +1,23 @@
+/* ── value chapter — .vl- prefix ── */
+.vl-scene {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  padding: 92px 130px; box-sizing: border-box;
+}
+.vl-title { font-family: var(--font-display-cn); font-size: 36px; font-weight: 700; color: var(--text); margin-bottom: 36px; text-align: center; }
+.vl-text { font-family: var(--font-body); font-size: 26px; color: var(--text-2); text-align: center; max-width: 1100px; line-height: 1.7; }
+.vl-big { font-family: var(--font-display-cn); font-size: 48px; font-weight: 700; color: var(--text); text-align: center; line-height: 1.5; max-width: 1000px; }
+.vl-big em { font-style: normal; color: var(--accent); }
+.vl-cards { display: flex; gap: 32px; width: 100%; max-width: 1300px; }
+.vl-card { flex: 1; padding: 32px 28px; background: var(--surface-2); border: 1px solid var(--rule); border-radius: var(--r-card, 4px); display: flex; flex-direction: column; gap: 16px; opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.vl-card.visible { opacity: 1; transform: translateY(0); }
+.vl-card.dimmed { opacity: 0.3; }
+.vl-card-num { font-family: var(--font-display-en); font-style: italic; font-weight: 500; font-size: 40px; color: var(--accent); line-height: 1; }
+.vl-card-title { font-family: var(--font-display-cn); font-size: 24px; font-weight: 700; color: var(--text); }
+.vl-card-desc { font-family: var(--font-body); font-size: 18px; color: var(--text-mute); line-height: 1.6; }
+.vl-compare { display: flex; gap: 48px; width: 100%; max-width: 1200px; }
+.vl-compare-col { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+.vl-compare-label { font-family: var(--font-display-cn); font-size: 24px; font-weight: 700; color: var(--text); padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+.vl-compare-item { font-family: var(--font-body); font-size: 20px; color: var(--text-mute); line-height: 1.6; padding-left: 16px; border-left: 3px solid var(--rule); }
+.vl-compare-item.active { border-left-color: var(--accent); color: var(--text-2); }
+.vl-sub { font-family: var(--font-body); font-size: 22px; color: var(--text-mute); text-align: center; margin-top: 24px; }

@@ -1,0 +1,24 @@
+/* ── reflection chapter — .rf- prefix ── */
+.rf-scene {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  padding: 92px 130px; box-sizing: border-box;
+}
+.rf-title { font-family: var(--font-display-cn); font-size: 36px; font-weight: 700; color: var(--text); margin-bottom: 36px; text-align: center; }
+.rf-text { font-family: var(--font-body); font-size: 26px; color: var(--text-2); text-align: center; max-width: 1100px; line-height: 1.7; }
+.rf-big { font-family: var(--font-display-cn); font-size: 48px; font-weight: 700; color: var(--text); text-align: center; line-height: 1.5; max-width: 1000px; }
+.rf-big em { font-style: normal; color: var(--accent); }
+.rf-pie-wrap { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.rf-pie-label { font-family: var(--font-body); font-size: 22px; color: var(--text-mute); }
+.rf-risks { display: flex; flex-direction: column; gap: 20px; max-width: 1000px; width: 100%; }
+.rf-risk { display: flex; gap: 20px; align-items: flex-start; padding: 24px 28px; background: var(--surface-2); border: 1px solid var(--rule); border-radius: var(--r-card, 4px); opacity: 0; transform: translateY(12px); transition: opacity 0.4s ease, transform 0.4s ease; }
+.rf-risk.visible { opacity: 1; transform: translateY(0); }
+.rf-risk-icon { font-family: var(--font-display-en); font-style: italic; font-weight: 500; font-size: 32px; color: var(--accent); flex-shrink: 0; width: 40px; }
+.rf-risk-text { font-family: var(--font-body); font-size: 20px; color: var(--text-2); line-height: 1.6; }
+.rf-pillars { display: flex; gap: 32px; max-width: 1200px; width: 100%; }
+.rf-pillar { flex: 1; padding: 28px 24px; background: var(--surface-2); border: 1px solid var(--rule); border-radius: var(--r-card, 4px); display: flex; flex-direction: column; gap: 12px; opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.rf-pillar.visible { opacity: 1; transform: translateY(0); }
+.rf-pillar-num { font-family: var(--font-display-en); font-style: italic; font-weight: 500; font-size: 36px; color: var(--accent); }
+.rf-pillar-title { font-family: var(--font-display-cn); font-size: 22px; font-weight: 700; color: var(--text); }
+.rf-pillar-desc { font-family: var(--font-body); font-size: 17px; color: var(--text-mute); line-height: 1.6; }
+.rf-sub { font-family: var(--font-body); font-size: 22px; color: var(--text-mute); text-align: center; margin-top: 24px; }

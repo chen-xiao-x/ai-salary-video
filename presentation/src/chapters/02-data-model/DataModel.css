@@ -1,0 +1,474 @@
+/* ── data-model chapter — .dm- prefix ── */
+
+.dm-scene {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 92px 130px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* ── step 0: data cleaning intro ── */
+.dm-clean-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.dm-clean-hero {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 120px;
+  color: var(--text);
+  letter-spacing: -0.035em;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dm-clean-hero.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.dm-clean-sub {
+  font-family: var(--font-body);
+  font-size: 28px;
+  color: var(--text-mute);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+}
+
+.dm-clean-sub.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dm-clean-detail {
+  display: flex;
+  gap: 48px;
+  margin-top: 8px;
+}
+
+.dm-clean-tag {
+  font-family: var(--font-body);
+  font-size: 22px;
+  color: var(--text-faint);
+  padding: 8px 20px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.dm-clean-tag.visible {
+  opacity: 1;
+}
+
+/* ── step 1: funnel ── */
+.dm-funnel-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.dm-funnel-title {
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.dm-funnel {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.dm-funnel-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.dm-funnel-step.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.dm-funnel-number {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 64px;
+  color: var(--accent);
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.dm-funnel-label {
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: var(--text-mute);
+  text-align: center;
+}
+
+.dm-funnel-arrow {
+  font-family: var(--font-display-en);
+  font-size: 32px;
+  color: var(--text-faint);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dm-funnel-arrow.visible {
+  opacity: 1;
+}
+
+/* ── step 2: job categories ── */
+.dm-jobs-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.dm-jobs-title {
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+
+.dm-jobs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+.dm-job-tag {
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: var(--text-2);
+  padding: 12px 24px;
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.dm-job-tag.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dm-job-tag.highlight {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ── steps 3-5: model cards ── */
+.dm-model-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+}
+
+.dm-model-title {
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.dm-models-row {
+  display: flex;
+  gap: 48px;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.dm-model-card {
+  flex: 1;
+  padding: 40px 36px;
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-card, 4px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.dm-model-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dm-model-card.dimmed {
+  opacity: 0.35;
+  transform: translateY(0);
+}
+
+.dm-model-name {
+  font-family: var(--font-display-cn);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.dm-model-desc {
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: var(--text-mute);
+  line-height: 1.6;
+}
+
+.dm-model-formula {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--accent);
+  padding: 16px 20px;
+  background: var(--surface-3);
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+.dm-model-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dm-model-tag {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-faint);
+  padding: 4px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+}
+
+/* ── step 6: validation ── */
+.dm-valid-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.dm-valid-title {
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.dm-valid-row {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+}
+
+.dm-valid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.dm-valid-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dm-valid-number {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 72px;
+  color: var(--accent);
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.dm-valid-label {
+  font-family: var(--font-body);
+  font-size: 22px;
+  color: var(--text-mute);
+  text-align: center;
+}
+
+.dm-valid-divider {
+  width: 1px;
+  height: 80px;
+  background: var(--rule);
+}
+
+/* ── steps 7-8: R² comparison bars ── */
+.dm-r2-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+}
+
+.dm-r2-title {
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.dm-r2-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.dm-r2-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.dm-r2-bar-row.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.dm-r2-bar-row.dimmed {
+  opacity: 0.35;
+  transform: translateX(0);
+}
+
+.dm-r2-bar-label {
+  font-family: var(--font-body);
+  font-size: 22px;
+  color: var(--text-2);
+  width: 140px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.dm-r2-bar-track {
+  flex: 1;
+  height: 40px;
+  background: var(--surface-3);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.dm-r2-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  width: 0%;
+  transition: width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dm-r2-bar-fill.visible {
+  width: var(--fill-width);
+}
+
+.dm-r2-bar-fill.accent {
+  background: var(--accent);
+}
+
+.dm-r2-bar-fill.muted {
+  background: var(--text-faint);
+}
+
+.dm-r2-bar-value {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 32px;
+  color: var(--text);
+  letter-spacing: -0.035em;
+  width: 80px;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.8s;
+}
+
+.dm-r2-bar-value.visible {
+  opacity: 1;
+}
+
+.dm-r2-bar-value.accent {
+  color: var(--accent);
+}
+
+/* ── step 9: conclusion ── */
+.dm-conclusion-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.dm-conclusion-text {
+  font-family: var(--font-display-cn);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  line-height: 1.5;
+  max-width: 1100px;
+}
+
+.dm-conclusion-text em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.dm-conclusion-sub {
+  font-family: var(--font-body);
+  font-size: 26px;
+  color: var(--text-mute);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
+}
+
+.dm-conclusion-sub.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
