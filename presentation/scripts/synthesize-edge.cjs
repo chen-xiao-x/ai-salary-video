@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PYTHON = 'C:/Users/陈晓晓/AppData/Local/Programs/Python/Python314/python.exe';
-const VOICE = 'zh-CN-YunxiNeural';
+const VOICE = 'zh-CN-YunyangNeural';
 const AUDIO_DIR = path.join(__dirname, '..', 'public', 'audio');
 const SEGMENTS_FILE = path.join(__dirname, '..', 'audio-segments.json');
 
