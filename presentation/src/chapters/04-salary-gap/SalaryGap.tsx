@@ -60,17 +60,15 @@ export default function SalaryGap({ step }: ChapterStepProps) {
       {step === 5 && (
         <R delay={0}><div className="sg-note">定远程薪酬策略时，这个数字得考虑进去</div></R>
       )}
-      {/* Step 6: Company size */}
+      {/* Step 6: Company size — horizontal bars */}
       {step === 6 && (
-        <>
+        <div className="sg-bar-scene">
           <div className="sg-title">公司规模薪资对比</div>
-          <div className="sg-triple">
-            <R delay={200}><div className="sg-item"><span className="sg-label">中型企业</span><span className="sg-number sg-highlight">14.7<span className="sg-unit">万</span></span></div></R>
-            <R delay={500}><div className="sg-item"><span className="sg-label">大型企业</span><span className="sg-number">12.6<span className="sg-unit">万</span></span></div></R>
-            <R delay={800}><div className="sg-item"><span className="sg-label">小型企业</span><span className="sg-number">9.2<span className="sg-unit">万</span></span></div></R>
-          </div>
+          <BarRow label="中型企业" value="14.7万" w={100} winner delay={200} />
+          <BarRow label="大型企业" value="12.6万" w={86} winner={false} delay={500} />
+          <BarRow label="小型企业" value="9.2万" w={63} winner={false} delay={800} />
           <R delay={1100}><div className="sg-sub">中型公司在抢人这件事上最舍得花钱</div></R>
-        </>
+        </div>
       )}
       {/* Step 7: Note */}
       {step === 7 && (
@@ -84,4 +82,19 @@ function R({ delay, children }: { delay: number; children: React.ReactNode }) {
   const [v, setV] = useState(false);
   useEffect(() => { const t = setTimeout(() => setV(true), delay); return () => clearTimeout(t); }, [delay]);
   return <div style={{ opacity: v ? 1 : 0, transform: v ? "none" : "translateY(16px)", transition: "opacity 0.5s ease, transform 0.5s ease" }}>{children}</div>;
+}
+
+function BarRow({ label, value, w, winner, delay }: { label: string; value: string; w: number; winner: boolean; delay: number }) {
+  const [v, setV] = useState(false);
+  useEffect(() => { const t = setTimeout(() => setV(true), delay); return () => clearTimeout(t); }, [delay]);
+  return (
+    <div className={`sg-bar-row ${v ? "visible" : ""}`}>
+      <span className="sg-bar-label">{label}</span>
+      <div className="sg-bar-track">
+        <div className={`sg-bar-fill ${winner ? "winner" : "loser"} ${v ? "visible" : ""}`}
+          style={{ "--w": `${w}%` } as React.CSSProperties} />
+      </div>
+      <span className={`sg-bar-val ${v ? "visible" : ""}`}>{value}</span>
+    </div>
+  );
 }

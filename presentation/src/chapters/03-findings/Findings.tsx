@@ -101,16 +101,14 @@ export default function Findings({ step }: ChapterStepProps) {
         </div>
       )}
 
-      {/* Step 5: 88% total */}
+      {/* Step 5: 88% total — ring progress */}
       {step === 5 && (
         <div className="fn-feature-scene">
           <div className="fn-title">三者合计贡献</div>
-          <Reveal delay={200}>
-            <div className="fn-88-badge glow-pulse">88%</div>
-          </Reveal>
-          <div className="fn-feature-bars">
-            <FeatureRow label="雇佣类型" pct="0.4%" w={1} delay={600} dimmed />
-            <FeatureRow label="公司规模" pct="2.9%" w={7} delay={800} dimmed />
+          <RingProgressSVG percent={88} delay={200} />
+          <div className="fn-feature-bars" style={{ marginTop: 20 }}>
+            <FeatureRow label="雇佣类型" pct="0.4%" w={1} delay={1200} dimmed />
+            <FeatureRow label="公司规模" pct="2.9%" w={7} delay={1400} dimmed />
           </div>
         </div>
       )}
@@ -242,5 +240,37 @@ function CoefRow({ label, value, w, positive, delay, dimmed }: { label: string; 
       <div className={`fn-coef-bar ${positive ? "positive" : "negative"} ${v ? "visible" : ""}`} style={{ "--w": `${w}%` } as React.CSSProperties} />
       <span className={`fn-coef-val ${v ? "visible" : ""}`}>{value}</span>
     </div>
+  );
+}
+
+/* ── SVG: Ring Progress ── */
+function RingProgressSVG({ percent, delay }: { percent: number; delay: number }) {
+  const [v, setV] = useState(false);
+  useEffect(() => { const t = setTimeout(() => setV(true), delay); return () => clearTimeout(t); }, [delay]);
+  const r = 90;
+  const circumference = 2 * Math.PI * r;
+  const offset = circumference - (percent / 100) * circumference;
+  return (
+    <svg viewBox="0 0 240 240" style={{ width: 220, height: 220 }}>
+      {/* Background ring */}
+      <circle cx="120" cy="120" r={r} fill="none" stroke="var(--surface-3)" strokeWidth="12" />
+      {/* Progress ring */}
+      <circle cx="120" cy="120" r={r} fill="none" stroke="var(--accent)" strokeWidth="12"
+        strokeLinecap="round" strokeDasharray={circumference}
+        strokeDashoffset={v ? offset : circumference}
+        transform="rotate(-90 120 120)"
+        style={{ transition: "stroke-dashoffset 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)" }} />
+      {/* Center text */}
+      <text x="120" y="110" textAnchor="middle" fill="var(--accent)" fontSize="48"
+        fontFamily="var(--font-display-en)" fontStyle="italic" fontWeight="500"
+        opacity={v ? 1 : 0} style={{ transition: "opacity 0.5s ease 1s" }}>
+        {percent}%
+      </text>
+      <text x="120" y="140" textAnchor="middle" fill="var(--text-mute)" fontSize="14"
+        fontFamily="var(--font-body)"
+        opacity={v ? 1 : 0} style={{ transition: "opacity 0.5s ease 1.2s" }}>
+        预测重要性
+      </text>
+    </svg>
   );
 }

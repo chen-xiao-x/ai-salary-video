@@ -19,3 +19,15 @@
 .sg-triple { display: flex; align-items: baseline; gap: 40px; }
 .sg-triple .sg-item { min-width: 180px; }
 .sg-highlight { color: var(--accent); font-weight: 600; }
+/* Horizontal comparison bars */
+.sg-bar-scene { display: flex; flex-direction: column; align-items: center; gap: 32px; width: 100%; max-width: 1000px; }
+.sg-bar-row { display: flex; align-items: center; gap: 16px; width: 100%; opacity: 0; transform: translateX(-16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.sg-bar-row.visible { opacity: 1; transform: translateX(0); }
+.sg-bar-label { font-family: var(--font-body); font-size: 18px; color: var(--text-2); width: 120px; text-align: right; flex-shrink: 0; }
+.sg-bar-track { flex: 1; height: 32px; background: var(--surface-3); border-radius: 4px; overflow: hidden; position: relative; }
+.sg-bar-fill { height: 100%; border-radius: 4px; width: 0; transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.sg-bar-fill.visible { width: var(--w); }
+.sg-bar-fill.winner { background: var(--accent); }
+.sg-bar-fill.loser { background: var(--text-faint); }
+.sg-bar-val { font-family: var(--font-display-en); font-style: italic; font-weight: 500; font-size: 24px; color: var(--text); width: 80px; flex-shrink: 0; opacity: 0; transition: opacity 0.4s ease 0.6s; }
+.sg-bar-val.visible { opacity: 1; }

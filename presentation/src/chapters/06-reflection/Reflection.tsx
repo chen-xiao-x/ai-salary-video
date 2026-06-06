@@ -89,25 +89,33 @@ function R({ delay, children }: { delay: number; children: React.ReactNode }) {
 function R2Pie() {
   const [v, setV] = useState(false);
   useEffect(() => { const t = setTimeout(() => setV(true), 200); return () => clearTimeout(t); }, []);
-  // Simple SVG pie: 31% explained, 69% unexplained
-  const r = 80;
+  const r = 110;
+  const cx = 140, cy = 140;
+  const circumference = 2 * Math.PI * r;
   const explained = 0.31;
-  const angle = explained * 360;
-  const rad = (a: number) => (a - 90) * Math.PI / 180;
-  const x1 = 100 + r * Math.cos(rad(0));
-  const y1 = 100 + r * Math.sin(rad(0));
-  const x2 = 100 + r * Math.cos(rad(angle));
-  const y2 = 100 + r * Math.sin(rad(angle));
-  const large = angle > 180 ? 1 : 0;
+  const offset = circumference - explained * circumference;
   return (
-    <svg viewBox="0 0 200 200" style={{ width: 200, height: 200, opacity: v ? 1 : 0, transition: "opacity 0.6s ease" }}>
-      {/* Unexplained (background) */}
-      <circle cx="100" cy="100" r={r} fill="var(--surface-3)" />
-      {/* Explained (accent) */}
-      <path d={`M100,100 L${x1},${y1} A${r},${r} 0 ${large},1 ${x2},${y2} Z`} fill="var(--accent)" opacity="0.8" />
+    <svg viewBox="0 0 280 280" style={{ width: 280, height: 280 }}>
+      {/* Background ring */}
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke="var(--surface-3)" strokeWidth="16" />
+      {/* Explained ring */}
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke="var(--accent)" strokeWidth="16"
+        strokeLinecap="round" strokeDasharray={circumference}
+        strokeDashoffset={v ? offset : circumference}
+        transform={`rotate(-90 ${cx} ${cy})`}
+        style={{ transition: "stroke-dashoffset 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)" }} />
+      {/* Unexplained ring */}
+      <circle cx={cx} cy={cy} r={r - 24} fill="none" stroke="var(--text-faint)" strokeWidth="8" opacity="0.3" />
       {/* Center text */}
-      <text x="100" y="95" textAnchor="middle" fill="var(--accent)" fontSize="28" fontFamily="var(--font-display-en)" fontStyle="italic" fontWeight="500">31%</text>
-      <text x="100" y="118" textAnchor="middle" fill="var(--text-mute)" fontSize="12" fontFamily="var(--font-body)">已解释</text>
+      <text x={cx} y={cy - 8} textAnchor="middle" fill="var(--accent)" fontSize="52"
+        fontFamily="var(--font-display-en)" fontStyle="italic" fontWeight="500"
+        opacity={v ? 1 : 0} style={{ transition: "opacity 0.5s ease 1s" }}>31%</text>
+      <text x={cx} y={cy + 24} textAnchor="middle" fill="var(--text-mute)" fontSize="16"
+        fontFamily="var(--font-body)"
+        opacity={v ? 1 : 0} style={{ transition: "opacity 0.5s ease 1.2s" }}>已解释</text>
+      <text x={cx} y={cy + 48} textAnchor="middle" fill="var(--text-faint)" fontSize="13"
+        fontFamily="var(--font-body)"
+        opacity={v ? 1 : 0} style={{ transition: "opacity 0.5s ease 1.4s" }}>69% 无法解释</text>
     </svg>
   );
 }

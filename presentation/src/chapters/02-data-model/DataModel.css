@@ -187,6 +187,10 @@
   color: var(--accent);
   font-weight: 600;
 }
+.dm-job-icon {
+  font-size: 18px;
+  margin-right: 4px;
+}
 
 /* ── steps 3-5: model cards ── */
 .dm-model-scene {
