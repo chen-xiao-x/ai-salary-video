@@ -218,7 +218,7 @@
 .dm-model-card {
   flex: 1;
   padding: 40px 36px;
-  background: rgba(10, 31, 61, 0.7);
+  background: rgba(10, 31, 61, 0.85);
   border: 1px solid rgba(198, 205, 214, 0.2);
   border-radius: var(--r-card, 4px);
   display: flex;
