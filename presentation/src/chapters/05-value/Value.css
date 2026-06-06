@@ -6,7 +6,7 @@
 }
 .vl-title { font-family: var(--font-display-cn); font-size: 36px; font-weight: 700; color: var(--text); margin-bottom: 36px; text-align: center; }
 .vl-text { font-family: var(--font-body); font-size: 26px; color: var(--text-2); text-align: center; max-width: 1100px; line-height: 1.7; }
-.vl-big { font-family: var(--font-display-cn); font-size: 48px; font-weight: 700; color: var(--text); text-align: center; line-height: 1.5; max-width: 1000px; }
+.vl-big { font-family: var(--font-display-cn); font-size: 56px; font-weight: 700; color: var(--text); text-align: center; line-height: 1.5; max-width: 1000px; }
 .vl-big em { font-style: normal; color: var(--accent); }
 .vl-cards { display: flex; gap: 32px; width: 100%; max-width: 1300px; }
 .vl-card { flex: 1; padding: 32px 28px; background: #ffffff; border: 1px solid var(--rule); border-radius: var(--r-card, 4px); display: flex; flex-direction: column; gap: 16px; opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; box-shadow: 0 1px 0 var(--rule), 0 10px 36px rgba(10, 31, 61, 0.05); }
@@ -15,8 +15,9 @@
 .vl-card-num { font-family: var(--font-display-en); font-style: italic; font-weight: 500; font-size: 40px; color: var(--accent); line-height: 1; }
 .vl-card-title { font-family: var(--font-display-cn); font-size: 24px; font-weight: 700; color: var(--text); }
 .vl-card-desc { font-family: var(--font-body); font-size: 18px; color: var(--text-mute); line-height: 1.6; }
-.vl-compare { display: flex; gap: 48px; width: 100%; max-width: 1200px; }
-.vl-compare-col { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+.vl-compare { display: flex; gap: 0; width: 100%; max-width: 1200px; position: relative; }
+.vl-compare-col { flex: 1; display: flex; flex-direction: column; gap: 20px; padding: 0 32px; }
+.vl-compare-divider { width: 1px; background: linear-gradient(180deg, transparent 10%, var(--accent) 30%, var(--accent) 70%, transparent 90%); opacity: 0.3; flex-shrink: 0; }
 .vl-compare-label { font-family: var(--font-display-cn); font-size: 24px; font-weight: 700; color: var(--text); padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
 .vl-compare-item { font-family: var(--font-body); font-size: 20px; color: var(--text-mute); line-height: 1.6; padding-left: 16px; border-left: 3px solid var(--rule); }
 .vl-compare-item.active { border-left-color: var(--accent); color: var(--text-2); }

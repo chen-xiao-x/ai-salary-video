@@ -87,6 +87,7 @@ export default function Value({ step }: ChapterStepProps) {
               <span className="vl-compare-label">传统</span>
               <div className="vl-compare-item">经验规则 → 模糊判断 → 主观拍板</div>
             </div></R>
+            <div className="vl-compare-divider" />
             <R delay={500}><div className="vl-compare-col">
               <span className="vl-compare-label">数据驱动</span>
               <div className="vl-compare-item active">数据 → 模型 → 量化证据 → 辅助决策</div>
@@ -103,6 +104,7 @@ export default function Value({ step }: ChapterStepProps) {
               <span className="vl-compare-label">传统</span>
               <div className="vl-compare-item">"权威说了算"<br />内部公平性难保证</div>
             </div></R>
+            <div className="vl-compare-divider" />
             <R delay={500}><div className="vl-compare-col">
               <span className="vl-compare-label">数据驱动</span>
               <div className="vl-compare-item active">"让数据说话"<br />减少人为偏见和权力博弈</div>

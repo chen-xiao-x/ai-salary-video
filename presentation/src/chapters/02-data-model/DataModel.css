@@ -24,7 +24,7 @@
   font-family: var(--font-display-en);
   font-style: italic;
   font-weight: 500;
-  font-size: 120px;
+  font-size: 160px;
   color: var(--text);
   letter-spacing: -0.035em;
   line-height: 1;
@@ -114,7 +114,7 @@
   font-family: var(--font-display-en);
   font-style: italic;
   font-weight: 500;
-  font-size: 64px;
+  font-size: 80px;
   color: var(--accent);
   letter-spacing: -0.035em;
   line-height: 1;
@@ -450,7 +450,7 @@
 
 .dm-conclusion-text {
   font-family: var(--font-display-cn);
-  font-size: 52px;
+  font-size: 64px;
   font-weight: 700;
   color: var(--text);
   text-align: center;

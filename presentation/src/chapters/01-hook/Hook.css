@@ -44,7 +44,7 @@
   font-family: var(--font-display-en);
   font-style: italic;
   font-weight: 500;
-  font-size: 96px;
+  font-size: 120px;
   color: var(--text);
   letter-spacing: -0.035em;
   line-height: 1;
@@ -68,7 +68,7 @@
   font-family: var(--font-display-en);
   font-style: italic;
   font-weight: 500;
-  font-size: 160px;
+  font-size: 200px;
   color: var(--accent);
   letter-spacing: -0.04em;
   line-height: 1;
@@ -94,7 +94,7 @@
 
 .hk-question {
   font-family: var(--font-display-cn);
-  font-size: 56px;
+  font-size: 64px;
   font-weight: 700;
   color: var(--text);
   text-align: center;

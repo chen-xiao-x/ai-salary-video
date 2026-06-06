@@ -10,10 +10,10 @@
 .sg-item { display: flex; flex-direction: column; align-items: center; gap: 12px; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .sg-item.visible { opacity: 1; transform: translateY(0); }
 .sg-label { font-family: var(--font-body); font-size: 24px; color: var(--text-mute); }
-.sg-number { font-family: var(--font-display-en); font-style: italic; font-weight: 500; font-size: 80px; color: var(--text); letter-spacing: -0.035em; line-height: 1; }
+.sg-number { font-family: var(--font-display-en); font-style: italic; font-weight: 500; font-size: 110px; color: var(--text); letter-spacing: -0.035em; line-height: 1; }
 .sg-unit { font-family: var(--font-body); font-size: 20px; color: var(--text-mute); margin-left: 4px; }
 .sg-vs { font-family: var(--font-display-en); font-size: 28px; color: var(--text-faint); font-style: italic; }
-.sg-diff { font-family: var(--font-display-en); font-style: italic; font-weight: 500; font-size: 48px; color: var(--accent); letter-spacing: -0.035em; opacity: 0; transform: scale(0.8); transition: opacity 0.5s ease 0.6s, transform 0.5s ease 0.6s; }
+.sg-diff { font-family: var(--font-display-en); font-style: italic; font-weight: 500; font-size: 64px; color: var(--accent); letter-spacing: -0.035em; opacity: 0; transform: scale(0.8); transition: opacity 0.5s ease 0.6s, transform 0.5s ease 0.6s; }
 .sg-diff.visible { opacity: 1; transform: scale(1); }
 .sg-note { font-family: var(--font-body); font-size: 28px; color: var(--text-mute); text-align: center; max-width: 900px; line-height: 1.6; }
 .sg-triple { display: flex; align-items: baseline; gap: 40px; }
