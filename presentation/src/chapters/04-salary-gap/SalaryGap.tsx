@@ -6,6 +6,12 @@ import "./SalaryGap.css";
 export default function SalaryGap({ step }: ChapterStepProps) {
   return (
     <div className="sg-scene scene-enter">
+      {/* Background decorations */}
+      <div className="deco-grid" />
+      <div className="deco-side-bar" />
+      <div className="deco-bracket top-right" />
+      <div className="deco-bracket bottom-left" />
+      <div className="deco-watermark" style={{ left: "-40px", top: "100px" }}>$</div>
       {/* Step 0: Job gap — DE vs DA */}
       {step === 0 && (
         <>

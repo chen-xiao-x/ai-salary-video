@@ -6,6 +6,12 @@ import "./Value.css";
 export default function Value({ step }: ChapterStepProps) {
   return (
     <div className="vl-scene scene-enter">
+      {/* Background decorations */}
+      <div className="deco-grid" />
+      <div className="deco-side-bar" />
+      <div className="deco-bracket top-left" />
+      <div className="deco-bracket bottom-right" />
+      <div className="deco-watermark" style={{ right: "-30px", bottom: "60px" }}>03</div>
       {/* Step 0: Efficiency */}
       {step === 0 && (
         <>

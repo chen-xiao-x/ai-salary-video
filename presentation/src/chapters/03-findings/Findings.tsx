@@ -9,6 +9,12 @@ import "./Findings.css";
 export default function Findings({ step }: ChapterStepProps) {
   return (
     <div className="fn-scene scene-enter">
+      {/* Background decorations */}
+      <div className="deco-grid" />
+      <div className="deco-side-bar" />
+      <div className="deco-bracket top-left" />
+      <div className="deco-bracket bottom-right" />
+      <div className="deco-watermark" style={{ right: "-20px", top: "60px" }}>88%</div>
       {/* Step 0: Linear regression R² */}
       {step === 0 && (
         <div className="fn-r2-scene">

@@ -11,6 +11,12 @@ import "./DataModel.css";
 export default function DataModel({ step }: ChapterStepProps) {
   return (
     <div className="dm-scene scene-enter">
+      {/* Background decorations */}
+      <div className="deco-grid" />
+      <div className="deco-side-bar" />
+      <div className="deco-bracket top-right" />
+      <div className="deco-bracket bottom-left" />
+      <div className="deco-watermark" style={{ left: "-60px", bottom: "40px" }}>RF</div>
       {/* Step 0: Data cleaning intro */}
       {step === 0 && (
         <div className="dm-clean-intro">

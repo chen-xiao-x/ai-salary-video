@@ -17,6 +17,13 @@ export default function Hook({ step }: ChapterStepProps) {
 
   return (
     <div className="hk-scene scene-enter">
+      {/* Background decorations */}
+      <div className="deco-grid" />
+      <div className="deco-side-bar" />
+      <div className="deco-bracket top-left" />
+      <div className="deco-bracket bottom-right" />
+      <div className="deco-watermark" style={{ right: "-40px", top: "80px" }}>2×</div>
+
       {/* Step 0: Salary hero — entry vs executive */}
       {step === 0 && (
         <div className="hk-salary-hero">

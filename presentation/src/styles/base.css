@@ -171,6 +171,111 @@ body {
 /* every chapter root */
 .scene { position: absolute; inset: 0; z-index: 2; }
 
+/* ── Background decoration primitives ── */
+/* Horizontal accent line — sits behind content */
+.deco-line-h {
+  position: absolute;
+  height: 1px;
+  background: var(--rule);
+  opacity: 0.4;
+  pointer-events: none;
+}
+/* Vertical accent line */
+.deco-line-v {
+  position: absolute;
+  width: 1px;
+  background: var(--rule);
+  opacity: 0.3;
+  pointer-events: none;
+}
+/* Accent dot cluster */
+.deco-dots {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.15;
+  pointer-events: none;
+}
+/* Corner bracket decoration */
+.deco-bracket {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--rule);
+  opacity: 0.25;
+  pointer-events: none;
+}
+.deco-bracket.top-left {
+  top: 60px;
+  left: 60px;
+  border-right: none;
+  border-bottom: none;
+}
+.deco-bracket.top-right {
+  top: 60px;
+  right: 60px;
+  border-left: none;
+  border-bottom: none;
+}
+.deco-bracket.bottom-left {
+  bottom: 60px;
+  left: 60px;
+  border-right: none;
+  border-top: none;
+}
+.deco-bracket.bottom-right {
+  bottom: 60px;
+  right: 60px;
+  border-left: none;
+  border-top: none;
+}
+/* Side accent bar — thick vertical stripe on the left */
+.deco-side-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 10%, var(--accent) 30%, var(--accent) 70%, transparent 90%);
+  opacity: 0.12;
+  pointer-events: none;
+}
+/* Grid dots background */
+.deco-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--rule) 0.8px, transparent 0.8px);
+  background-size: 48px 48px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+/* Large faded number watermark */
+.deco-watermark {
+  position: absolute;
+  font-family: var(--hero-num-font);
+  font-style: var(--hero-num-style);
+  font-weight: var(--hero-num-weight);
+  font-size: 320px;
+  color: var(--accent);
+  opacity: 0.03;
+  pointer-events: none;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  user-select: none;
+}
+/* Diagonal rule */
+.deco-diagonal {
+  position: absolute;
+  width: 200%;
+  height: 1px;
+  background: var(--rule);
+  opacity: 0.1;
+  transform-origin: center;
+  pointer-events: none;
+}
+
 /* ── Chapter corner mark (top-left: chapter title) ── */
 .chapter-corner {
   position: absolute;

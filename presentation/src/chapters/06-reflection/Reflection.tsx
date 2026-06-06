@@ -6,6 +6,12 @@ import "./Reflection.css";
 export default function Reflection({ step }: ChapterStepProps) {
   return (
     <div className="rf-scene scene-enter">
+      {/* Background decorations */}
+      <div className="deco-grid" />
+      <div className="deco-side-bar" />
+      <div className="deco-bracket top-right" />
+      <div className="deco-bracket bottom-left" />
+      <div className="deco-watermark" style={{ left: "-50px", top: "80px" }}>∞</div>
       {/* Step 0: R² = 0.31 limitation */}
       {step === 0 && (
         <>
