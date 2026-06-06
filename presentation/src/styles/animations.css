@@ -61,3 +61,51 @@
 @keyframes letter-rise {
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
+
+/* ── Chapter scene entrance ── */
+.scene-enter {
+  animation: scene-enter var(--dur-slow) var(--ease-quart) both;
+}
+@keyframes scene-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Accent glow pulse for hero numbers ── */
+.glow-pulse {
+  text-shadow:
+    0 0 20px var(--accent-glow),
+    0 0 60px rgba(30, 58, 138, 0.15);
+  animation: glow-breathe 3s ease-in-out infinite;
+}
+@keyframes glow-breathe {
+  0%, 100% { text-shadow: 0 0 20px var(--accent-glow), 0 0 60px rgba(30, 58, 138, 0.15); }
+  50%      { text-shadow: 0 0 30px var(--accent-glow), 0 0 80px rgba(30, 58, 138, 0.25); }
+}
+
+/* ── Bar chart shimmer (light sweep across bar) ── */
+.bar-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 2s ease-in-out 0.8s forwards;
+}
+@keyframes shimmer {
+  to { transform: translateX(100%); }
+}
+
+/* ── Subtle float (for decorative elements) ── */
+.float-gentle {
+  animation: float-y 4s ease-in-out infinite;
+}
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}

@@ -5,7 +5,7 @@ import "./Reflection.css";
 /** Chapter 6: reflection · 7 steps (0..6). CSS prefix: .rf- */
 export default function Reflection({ step }: ChapterStepProps) {
   return (
-    <div className="rf-scene">
+    <div className="rf-scene scene-enter">
       {/* Step 0: R² = 0.31 limitation */}
       {step === 0 && (
         <>

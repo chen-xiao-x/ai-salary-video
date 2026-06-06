@@ -16,21 +16,21 @@ export default function Hook({ step }: ChapterStepProps) {
   }, [step]);
 
   return (
-    <div className="hk-scene">
+    <div className="hk-scene scene-enter">
       {/* Step 0: Salary hero — entry vs executive */}
       {step === 0 && (
         <div className="hk-salary-hero">
           <div className="hk-salary-row">
             <div className="hk-salary-item">
               <span className="hk-salary-label">入门级</span>
-              <span className="hk-salary-number">
+              <span className="hk-salary-number glow-pulse">
                 9.4<span className="hk-salary-unit">万</span>
               </span>
             </div>
             <span className="hk-vs">vs</span>
             <div className="hk-salary-item">
               <span className="hk-salary-label">高管级</span>
-              <span className="hk-salary-number">
+              <span className="hk-salary-number glow-pulse">
                 19<span className="hk-salary-unit">万</span>
               </span>
             </div>

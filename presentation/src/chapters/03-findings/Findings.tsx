@@ -8,7 +8,7 @@ import "./Findings.css";
  */
 export default function Findings({ step }: ChapterStepProps) {
   return (
-    <div className="fn-scene">
+    <div className="fn-scene scene-enter">
       {/* Step 0: Linear regression R² */}
       {step === 0 && (
         <div className="fn-r2-scene">
@@ -100,7 +100,7 @@ export default function Findings({ step }: ChapterStepProps) {
         <div className="fn-feature-scene">
           <div className="fn-title">三者合计贡献</div>
           <Reveal delay={200}>
-            <div className="fn-88-badge">88%</div>
+            <div className="fn-88-badge glow-pulse">88%</div>
           </Reveal>
           <div className="fn-feature-bars">
             <FeatureRow label="雇佣类型" pct="0.4%" w={1} delay={600} dimmed />
@@ -206,7 +206,7 @@ function R2Row({ label, value, pct, accent, delay, dimmed }: { label: string; va
     <div className={`fn-r2-row ${v ? "visible" : ""} ${dimmed ? "dimmed" : ""} ${accent ? "highlight" : ""}`}>
       <span className="fn-r2-label">{label}</span>
       <div className="fn-r2-track">
-        <div className={`fn-r2-fill ${v ? "visible" : ""}`} style={{ "--w": `${pct}%` } as React.CSSProperties} />
+        <div className={`fn-r2-fill ${v ? "visible" : ""} ${accent ? "bar-shimmer" : ""}`} style={{ "--w": `${pct}%`, position: "relative" } as React.CSSProperties} />
       </div>
       <span className={`fn-r2-val ${v ? "visible" : ""} ${accent ? "accent" : ""}`}>R²={value}</span>
     </div>

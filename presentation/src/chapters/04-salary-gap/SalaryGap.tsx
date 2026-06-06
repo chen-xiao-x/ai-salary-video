@@ -5,7 +5,7 @@ import "./SalaryGap.css";
 /** Chapter 4: salary-gap · 8 steps (0..7). CSS prefix: .sg- */
 export default function SalaryGap({ step }: ChapterStepProps) {
   return (
-    <div className="sg-scene">
+    <div className="sg-scene scene-enter">
       {/* Step 0: Job gap — DE vs DA */}
       {step === 0 && (
         <>

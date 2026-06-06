@@ -5,7 +5,7 @@ import "./Value.css";
 /** Chapter 5: value · 10 steps (0..9). CSS prefix: .vl- */
 export default function Value({ step }: ChapterStepProps) {
   return (
-    <div className="vl-scene">
+    <div className="vl-scene scene-enter">
       {/* Step 0: Efficiency */}
       {step === 0 && (
         <>

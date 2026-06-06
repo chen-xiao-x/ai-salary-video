@@ -10,7 +10,7 @@ import "./DataModel.css";
  */
 export default function DataModel({ step }: ChapterStepProps) {
   return (
-    <div className="dm-scene">
+    <div className="dm-scene scene-enter">
       {/* Step 0: Data cleaning intro */}
       {step === 0 && (
         <div className="dm-clean-intro">
