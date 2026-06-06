@@ -59,4 +59,6 @@
     0 60px 160px rgba(10, 31, 61, 0.20),
     0 0 0 1px rgba(10, 31, 61, 0.04);
   /* SIGNATURE: NO surface-pattern — porcelain is meant to be clean. */
+  /* subtle vignette for cinematic depth */
+  --surface-vignette: radial-gradient(ellipse at center, transparent 60%, rgba(10, 31, 61, 0.06) 100%);
 }

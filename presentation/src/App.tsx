@@ -57,6 +57,17 @@ export default function App() {
         <div key={ch.id} className="scene">
           <Cmp step={stepper.cursor.step} />
         </div>
+        {/* Chapter corner mark */}
+        <div className="chapter-corner">
+          <span className="ch-num">
+            {String(stepper.cursor.chapter + 1).padStart(2, "0")}
+          </span>
+          <span className="ch-title">{ch.title}</span>
+        </div>
+        {/* Step indicator */}
+        <div className="step-indicator">
+          {stepper.cursor.step + 1} / {ch.narrations.length}
+        </div>
       </Stage>
       <ProgressBar
         chapters={CHAPTERS}

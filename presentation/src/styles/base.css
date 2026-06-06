@@ -171,6 +171,48 @@ body {
 /* every chapter root */
 .scene { position: absolute; inset: 0; z-index: 2; }
 
+/* ── Chapter corner mark (top-left: chapter title) ── */
+.chapter-corner {
+  position: absolute;
+  top: var(--space-7);
+  left: var(--space-9);
+  z-index: 10;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  pointer-events: none;
+}
+.chapter-corner .ch-num {
+  font-family: var(--hero-num-font);
+  font-style: var(--hero-num-style);
+  font-weight: var(--hero-num-weight);
+  font-size: 28px;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: 0;
+}
+.chapter-corner .ch-title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+/* ── Step indicator (bottom-right) ── */
+.step-indicator {
+  position: absolute;
+  right: var(--space-9);
+  bottom: var(--space-7);
+  z-index: 10;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 /* ─────────────────────────────────────────────────────────────────────
  * 4. Type primitives — chapters compose with these instead of hard sizes.
  * ───────────────────────────────────────────────────────────────────── */
