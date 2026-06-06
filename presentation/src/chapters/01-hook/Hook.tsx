@@ -17,6 +17,8 @@ export default function Hook({ step }: ChapterStepProps) {
 
   return (
     <div className="hk-scene scene-enter">
+      {/* Background image */}
+      <div className="bg-image" style={{ backgroundImage: "url(/images/bg-city.jpg)" }} />
       {/* Background decorations */}
       <div className="deco-grid" />
       <div className="deco-side-bar" />

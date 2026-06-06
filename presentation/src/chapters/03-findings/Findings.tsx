@@ -9,6 +9,7 @@ import "./Findings.css";
 export default function Findings({ step }: ChapterStepProps) {
   return (
     <div className="fn-scene scene-enter">
+      <div className="bg-image" style={{ backgroundImage: "url(/images/bg-particles.jpg)" }} />
       {/* Background decorations */}
       <div className="deco-grid" />
       <div className="deco-side-bar" />

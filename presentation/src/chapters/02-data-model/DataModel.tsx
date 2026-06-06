@@ -9,6 +9,7 @@ import "./DataModel.css";
 export default function DataModel({ step }: ChapterStepProps) {
   return (
     <div className="dm-scene scene-enter">
+      <div className="bg-image" style={{ backgroundImage: "url(/images/bg-data.jpg)" }} />
       <div className="deco-grid" />
       <div className="deco-side-bar" />
       <div className="deco-bracket top-right" />

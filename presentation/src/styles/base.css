@@ -171,6 +171,105 @@ body {
 /* every chapter root */
 .scene { position: absolute; inset: 0; z-index: 2; }
 
+/* ── Full-bleed background image layer ── */
+.bg-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  pointer-events: none;
+}
+.bg-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 31, 61, 0.85) 0%,
+    rgba(10, 31, 61, 0.7) 50%,
+    rgba(10, 31, 61, 0.85) 100%
+  );
+  z-index: 1;
+}
+/* Text on bg-image needs to be light */
+.bg-image ~ * { position: relative; z-index: 2; }
+/* Override text colors for dark background scenes */
+.bg-image ~ .hk-scene,
+.bg-image ~ .dm-scene,
+.bg-image ~ .fn-scene,
+.bg-image ~ .sg-scene,
+.bg-image ~ .vl-scene,
+.bg-image ~ .rf-scene { color: #e8ecf0; }
+.bg-image ~ * .hk-salary-label,
+.bg-image ~ * .hk-salary-unit,
+.bg-image ~ * .hk-question,
+.bg-image ~ * .dm-clean-sub,
+.bg-image ~ * .dm-clean-tag,
+.bg-image ~ * .dm-model-desc,
+.bg-image ~ * .dm-model-tag,
+.bg-image ~ * .dm-valid-label,
+.bg-image ~ * .dm-conclusion-sub,
+.bg-image ~ * .fn-sub,
+.bg-image ~ * .fn-stat,
+.bg-image ~ * .fn-feature-label,
+.bg-image ~ * .fn-coef-label,
+.bg-image ~ * .fn-gap-label,
+.bg-image ~ * .sg-label,
+.bg-image ~ * .sg-sub,
+.bg-image ~ * .sg-bar-label,
+.bg-image ~ * .vl-text,
+.bg-image ~ * .vl-sub,
+.bg-image ~ * .vl-card-desc,
+.bg-image ~ * .vl-compare-label,
+.bg-image ~ * .vl-compare-item,
+.bg-image ~ * .rf-sub,
+.bg-image ~ * .rf-pillar-desc,
+.bg-image ~ * .rf-risk-text { color: rgba(232, 236, 240, 0.75); }
+/* White titles on dark */
+.bg-image ~ * .hk-question,
+.bg-image ~ * .dm-title,
+.bg-image ~ * .dm-funnel-title,
+.bg-image ~ * .dm-model-title,
+.bg-image ~ * .dm-valid-title,
+.bg-image ~ * .dm-conclusion-text,
+.bg-image ~ * .fn-title,
+.bg-image ~ * .fn-conclusion-big,
+.bg-image ~ * .sg-title,
+.bg-image ~ * .vl-title,
+.bg-image ~ * .vl-big,
+.bg-image ~ * .rf-title,
+.bg-image ~ * .rf-big { color: #ffffff; }
+/* White numbers */
+.bg-image ~ * .hk-salary-number,
+.bg-image ~ * .dm-clean-hero,
+.bg-image ~ * .dm-stat-number,
+.bg-image ~ * .dm-funnel-number,
+.bg-image ~ * .dm-r2-val,
+.bg-image ~ * .dm-valid-number,
+.bg-image ~ * .fn-r2-val,
+.bg-image ~ * .fn-feature-pct,
+.bg-image ~ * .fn-coef-val,
+.bg-image ~ * .fn-gap-number,
+.bg-image ~ * .fn-gap-diff,
+.bg-image ~ * .sg-number,
+.bg-image ~ * .sg-diff,
+.bg-image ~ * .sg-bar-val,
+.bg-image ~ * .rf-pillar-num,
+.bg-image ~ * .rf-risk-icon { color: #ffffff; }
+/* Accent color override for dark bg */
+.bg-image ~ * .hk-multiplier,
+.bg-image ~ * .fn-88-badge,
+.bg-image ~ * .dm-model-formula { color: #7da5e0; text-shadow: 0 0 30px rgba(125, 165, 224, 0.4); }
+/* Dimmer elements on dark */
+.bg-image ~ * .hk-answer,
+.bg-image ~ * .dm-clean-detail,
+.bg-image ~ * .hk-vs,
+.bg-image ~ * .sg-vs { color: rgba(232, 236, 240, 0.5); }
+/* Chapter corner and step indicator */
+.bg-image ~ * .chapter-corner .ch-title { color: rgba(232, 236, 240, 0.5); }
+.bg-image ~ * .step-indicator { color: rgba(232, 236, 240, 0.4); }
+
 /* ── Background decoration primitives ── */
 /* Horizontal accent line — sits behind content */
 .deco-line-h {

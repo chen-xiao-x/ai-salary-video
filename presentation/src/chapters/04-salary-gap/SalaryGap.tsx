@@ -6,6 +6,7 @@ import "./SalaryGap.css";
 export default function SalaryGap({ step }: ChapterStepProps) {
   return (
     <div className="sg-scene scene-enter">
+      <div className="bg-image" style={{ backgroundImage: "url(/images/bg-lines.jpg)" }} />
       {/* Background decorations */}
       <div className="deco-grid" />
       <div className="deco-side-bar" />
