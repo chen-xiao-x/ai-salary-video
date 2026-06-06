@@ -6,7 +6,7 @@ import "./Value.css";
 export default function Value({ step }: ChapterStepProps) {
   return (
     <div className="vl-scene scene-enter">
-      <div className="bg-image" style={{ backgroundImage: "url(/images/bg-network.jpg)" }} />
+      <div className="chapter-bg vl" />
       {/* Background decorations */}
       <div className="deco-grid" />
       <div className="deco-side-bar" />

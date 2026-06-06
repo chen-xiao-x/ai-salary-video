@@ -71,7 +71,7 @@
 .fn-r2-track {
   flex: 1;
   height: 36px;
-  background: rgba(10, 31, 61, 0.5);
+  background: var(--surface-3);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -183,7 +183,7 @@
 .fn-feature-track {
   flex: 1;
   height: 32px;
-  background: rgba(10, 31, 61, 0.5);
+  background: var(--surface-3);
   border-radius: 4px;
   overflow: hidden;
 }

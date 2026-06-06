@@ -218,8 +218,8 @@
 .dm-model-card {
   flex: 1;
   padding: 40px 36px;
-  background: rgba(10, 31, 61, 0.85);
-  border: 1px solid rgba(198, 205, 214, 0.2);
+  background: #ffffff;
+  border: 1px solid var(--rule);
   border-radius: var(--r-card, 4px);
   display: flex;
   flex-direction: column;
@@ -227,9 +227,7 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 var(--rule), 0 12px 40px rgba(10, 31, 61, 0.06);
 }
 
 .dm-model-card.visible {

@@ -6,7 +6,7 @@ import "./Reflection.css";
 export default function Reflection({ step }: ChapterStepProps) {
   return (
     <div className="rf-scene scene-enter">
-      <div className="bg-image" style={{ backgroundImage: "url(/images/bg-globe.jpg)" }} />
+      <div className="chapter-bg rf" />
       {/* Background decorations */}
       <div className="deco-grid" />
       <div className="deco-side-bar" />

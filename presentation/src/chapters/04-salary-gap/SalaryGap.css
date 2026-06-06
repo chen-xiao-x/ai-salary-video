@@ -24,7 +24,7 @@
 .sg-bar-row { display: flex; align-items: center; gap: 16px; width: 100%; opacity: 0; transform: translateX(-16px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .sg-bar-row.visible { opacity: 1; transform: translateX(0); }
 .sg-bar-label { font-family: var(--font-body); font-size: 18px; color: var(--text-2); width: 120px; text-align: right; flex-shrink: 0; }
-.sg-bar-track { flex: 1; height: 32px; background: rgba(10, 31, 61, 0.5); border-radius: 4px; overflow: hidden; position: relative; }
+.sg-bar-track { flex: 1; height: 32px; background: var(--surface-3); border-radius: 4px; overflow: hidden; position: relative; }
 .sg-bar-fill { height: 100%; border-radius: 4px; width: 0; transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 .sg-bar-fill.visible { width: var(--w); }
 .sg-bar-fill.winner { background: var(--accent); }

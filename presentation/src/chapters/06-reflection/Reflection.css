@@ -11,12 +11,12 @@
 .rf-pie-wrap { display: flex; flex-direction: column; align-items: center; gap: 24px; }
 .rf-pie-label { font-family: var(--font-body); font-size: 22px; color: var(--text-mute); }
 .rf-risks { display: flex; flex-direction: column; gap: 20px; max-width: 1000px; width: 100%; }
-.rf-risk { display: flex; gap: 20px; align-items: flex-start; padding: 24px 28px; background: rgba(10, 31, 61, 0.8); border: 1px solid rgba(198, 205, 214, 0.15); border-radius: var(--r-card, 4px); opacity: 0; transform: translateY(12px); transition: opacity 0.4s ease, transform 0.4s ease; box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.rf-risk { display: flex; gap: 20px; align-items: flex-start; padding: 24px 28px; background: #ffffff; border: 1px solid var(--rule); border-radius: var(--r-card, 4px); opacity: 0; transform: translateY(12px); transition: opacity 0.4s ease, transform 0.4s ease; box-shadow: 0 1px 0 var(--rule), 0 8px 28px rgba(10, 31, 61, 0.04); }
 .rf-risk.visible { opacity: 1; transform: translateY(0); }
 .rf-risk-icon { font-family: var(--font-display-en); font-style: italic; font-weight: 500; font-size: 32px; color: var(--accent); flex-shrink: 0; width: 40px; }
 .rf-risk-text { font-family: var(--font-body); font-size: 20px; color: var(--text-2); line-height: 1.6; }
 .rf-pillars { display: flex; gap: 32px; max-width: 1200px; width: 100%; }
-.rf-pillar { flex: 1; padding: 28px 24px; background: rgba(10, 31, 61, 0.8); border: 1px solid rgba(198, 205, 214, 0.15); border-radius: var(--r-card, 4px); display: flex; flex-direction: column; gap: 12px; opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; box-shadow: 0 10px 36px rgba(0, 0, 0, 0.3); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.rf-pillar { flex: 1; padding: 28px 24px; background: #ffffff; border: 1px solid var(--rule); border-radius: var(--r-card, 4px); display: flex; flex-direction: column; gap: 12px; opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; box-shadow: 0 1px 0 var(--rule), 0 10px 36px rgba(10, 31, 61, 0.05); }
 .rf-pillar.visible { opacity: 1; transform: translateY(0); }
 .rf-pillar-num { font-family: var(--font-display-en); font-style: italic; font-weight: 500; font-size: 36px; color: var(--accent); }
 .rf-pillar-title { font-family: var(--font-display-cn); font-size: 22px; font-weight: 700; color: var(--text); }
